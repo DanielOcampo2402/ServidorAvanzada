@@ -3,16 +3,58 @@ export class ControladorHabitacion{
 
 
     BuscarHabitaciones(request, response){
-        response.send("Estoy buscando habitaciones desde el controlador")
+        try {
+            response.status(200).json({
+                "mensaje": "exito en la consulta",
+                "datos":"AQUI VAN LOS DATOS DE HABITACIONES"
+            })
+        } catch (error) {
+            response.status(400).json({
+                "mensaje": "error en la consulta" + error,
+                "datos":null
+            })
+        }
+
     }
     BuscarHabitacionesPorId(request, response){
-        response.send("Estoy buscando habitaciones por id desde el controlador")
+        try {
+            response.status(200).json({
+                "mensaje":"exito al buscar por id",
+                "datos":"AQUI VAN LOS DATOS DE HABITACION POR ID"
+            })
+        } catch (error) {
+            response.status(400).json({
+                "mensaje": "error en la consulta" + error,
+                "datos":null
+            })
+        }
+       
     }
     RegistrarHabitacion(request, response){
-        response.send("Estoy agregando habitaciones desde el controlador")
+        try {
+            response.status(200).json({
+                "mensaje": "exito al registrar la habitacion",
+                "datos":null
+            })
+        } catch (error) {
+            response.status(400).json({
+                "mensaje": "error en la consulta" + error,
+                "datos":null
+            })
+        }
     }
     EditarHabitacion(request, response){
-        response.send("Estoy editando habitaciones desde el controlador")
+        try {
+            response.status(200).json({
+                "mensaje": "exito editando la habitacion ",
+                "datos":null
+            })
+        } catch (error) {
+            response.status(400).json({
+                "mensaje": "error en la consulta" + error,
+                "datos":null
+            })
+        }
     }
 
 
